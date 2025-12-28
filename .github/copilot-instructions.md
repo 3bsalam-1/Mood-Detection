@@ -22,7 +22,7 @@ Purpose: Give an AI code agent the minimal, precise knowledge to be productive h
 
 - `src/train.py` builds and compiles the Keras model, loads dataset from `mood/`, and saves `models/mood.h5`.
 - `src/inference.py` provides `MoodPredictor` which loads `models/mood.h5`, preprocesses images (OpenCV BGR→RGB, resize to 256×256, normalize to [0,1]) and exposes `predict_from_array` / `predict_from_file`.
-- `src/gui/app.py` wraps `MoodPredictor` into a Tk/CustomTkinter GUI and calls `predictor.predict_from_*` for display.
+- `src/gui/app.py` wraps `MoodPredictor` into a CustomTkinter GUI and calls `predictor.predict_from_*` for display (CustomTkinter is required to run the GUI).
 - `src/cli.py` is a thin surface for `train` and `predict` operations (used by CI and local automation).
 - Notebooks (`notebooks/train.ipynb`) are the canonical exploratory training flow — keep scriptable versions in `src/train.py` in sync.
 
@@ -40,7 +40,7 @@ Purpose: Give an AI code agent the minimal, precise knowledge to be productive h
 ## Integration points & external dependencies
 
 - TensorFlow 2.16.x, Keras 3.x (model saving/loading issues can occur across minor TF/Keras versions).
-- OpenCV used for image I/O and camera capture; CustomTkinter is optional for a nicer GUI.
+- OpenCV used for image I/O and camera capture; CustomTkinter is required to run the GUI.
 - Dockerfile updated to use the module entrypoint (`python -m src.gui.app`).
 
 ## Concrete examples for agents (do these when editing or adding features)

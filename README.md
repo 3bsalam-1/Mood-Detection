@@ -42,8 +42,6 @@ Image-Classification/
 ├── pyproject.toml                   # Packaging metadata
 ├── Dockerfile                       # Docker image definition
 │
-# (No top-level `scripts/` directory — run GUI using the module entrypoint)
-# Run GUI locally with: `python -m src.gui.app`
 ├── src/                             # Core package
 │   ├── __init__.py
 │   ├── cli.py                       # CLI: train / predict
@@ -62,7 +60,7 @@ Image-Classification/
 │   ├── happy/                        # happy images
 │   └── sad/                          # sad images
 │
-└── m_logs/                          # TensorBoard logs
+└── logs/                          # TensorBoard logs
 ```
 
 ## 🚀 Quick Start
@@ -71,6 +69,9 @@ Image-Classification/
 - Python 3.10+
 - pip package manager
 - (Optional) NVIDIA GPU
+
+### Dataset & model availability ⚠️
+The raw dataset (`mood/`) and pre-trained model weights (`models/mood.h5`) are **not** included in the public repository for size or privacy reasons. If these directories or files are not present in your clone and you need access, please contact the repository owner at **3bsalam0@gmail.com** or open a GitHub issue to request access. You can also recreate the dataset locally by placing images in `mood/happy/` and `mood/sad/` and training a model with `python -m src.cli train`.
 
 ### Installation
 
@@ -127,10 +128,12 @@ Loss: 0.4921
 
 ```bash
 # Run GUI locally (module entrypoint)
+# Alternative: run the file directly (supported)
+#   python src/gui/app.py
 python -m src.gui.app
 ```
 
-**Note:** The repository does not include `scripts/gui_app.py` (the `Dockerfile` references it). If you plan to use Docker, either add a `scripts/gui_app.py` that imports `src.gui.app:main` or change the `Dockerfile` `CMD` to `python -m src.gui.app`.
+**Requirements:** The GUI requires `customtkinter` (already listed in `requirements.txt`); install with `pip install customtkinter` if you plan to use the GUI.
 
 **Features:**
 - 📸 Live camera detection
@@ -272,7 +275,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 **Ahmed Abdulsalam**
 - GitHub: [@3bsalam-1](https://github.com/3bsalam-1)
-- Email: ahmed.abdulsalam@example.com
+- Email: 3bsalam0@gmail.com
 
 ## 🙏 Acknowledgments
 
