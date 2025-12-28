@@ -1,0 +1,28 @@
+# Core Deep Learning
+tensorflow==2.16.1
+keras==3.3.0
+
+# Computer Vision
+opencv-python==4.8.1.78
+Pillow==10.1.0
+
+# GUI
+customtkinter==5.2.1
+
+# Data & Visualization
+numpy==2.2.6
+pandas==2.2.0
+matplotlib==3.8.2
+
+# Utilities
+requests==2.31.0
+
+# Optional GPU support
+# tensorflow[and-cuda]==2.16.1  # Uncomment for GPU support
+# Or use conda: conda install tensorflow-gpu
+
+# Development tools (optional)
+# jupyter==1.0.0
+# ipython==8.18.1
+# black==23.12.1
+# flake8==6.1.0
