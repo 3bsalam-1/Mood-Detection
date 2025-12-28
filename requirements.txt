@@ -10,7 +10,7 @@ Pillow==10.1.0
 customtkinter==5.2.1
 
 # Data & Visualization
-numpy==2.2.6
+numpy
 pandas==2.2.0
 matplotlib==3.8.2
 
